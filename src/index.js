@@ -1,17 +1,15 @@
+import { prisma } from "../graphql-prisma/directorioGphql/generated/prisma-client";
 import { GraphQLServer } from "graphql-yoga";
 
-//Type definitions (Schema)
-const typeDefs = `
-    type Query {
-        hello: String
-    }
-`;
+
+//Definiciones de types, queries y mutations (schemas)
+import typeDefs from "./schemas/schema";
 
 //Resolvers
 const resolvers = {
   Query: {
     hello() {
-      return "Mi primer query";
+      return "Hola desde Mi primer query";
     }
   }
 };
