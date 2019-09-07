@@ -1,0 +1,33 @@
+type User {
+  id: ID! @id
+  name: String!
+}
+
+type Categoria {
+  _id: ID! @id
+  nombre: String!
+  descripcion: String
+  tags: [String]!
+}
+  
+type Empresa {
+  id: ID! @id
+  nombre: String!
+  descripcion:String
+  direccion: Direccion
+  horarios: String!
+  categoria: Categoria! @relation(link: INLINE)
+  tel: String!
+  imagen: String
+  rangoDePrecios: String
+  ranking: Int
+}
+  
+type Direccion @embedded{
+  calle: String!
+  numero: Int!
+  colonia: String!
+  ciudad: String!
+  cp: String!
+  estado: String!
+}

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  prisma:
+    container_name: directorio_graphql
+    image: prismagraphql/prisma:1.34
+    restart: always
+    ports:
+    - "8080:8080"
+    environment:
+      PRISMA_CONFIG: |
+        port: 8080
+        # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
+        # managementApiSecret: my-secret
+        databases:
+          default:
+            connector: mongo
+            #schema: directorioGphql
+            uri: >-
+              mongodb+srv://artspider:Art750717@cluster0-smaby.azure.mongodb.net/directorioGphql?retryWrites=true&w=majority&useUnifiedTopology=true
