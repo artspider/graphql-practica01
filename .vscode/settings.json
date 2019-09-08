@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/12b30ff0-e15a-40ef-8577-54a52d64d460/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/directorioGraphql",
+    "appService.deploySubpath": ""
+}
