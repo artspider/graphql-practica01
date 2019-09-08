@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import { prisma } from "../graphql-prisma/directorioGphql/generated/prisma-client";
 import { GraphQLServer } from "graphql-yoga";
 
