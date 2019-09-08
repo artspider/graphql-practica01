@@ -1,4 +1,8 @@
-endpoint: http://localhost:8080/drectorio/dev
+#endpoint: http://localhost:8080/drectorio/dev
+#endpoint: http://40.76.37.15:8080/directorioGphql/prod
+endpoint: ${env:PRISMA_ENDPOINT}
+
+
 datamodel: datamodel.prisma
 databaseType: document
 
