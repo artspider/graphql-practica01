@@ -38,7 +38,10 @@ const typeDefs = `
 
   type Query {
       hello: String
-      showEmpresas: [Empresa]!
+      empresa(id: String!): Empresa!
+      empresas: [Empresa]!
+      categoria(_id: String): Categoria
+      categorias: [Categoria]!
   }
 `;
 

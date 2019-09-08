@@ -2,34 +2,18 @@ const Query = {
   hello: (root, args, context) => {
     return "Mi primer query";
   },
-  showEmpresas: async (root, args, context) => {
-    const empresas = await context.prisma.empresas();
-    console.log(empresas.categoria)
-    return empresas;
+  empresa: async (root, args, context) => {
+    return await context.prisma.empresa(args);
   },
-  /*
-  user: async (root, args, context) => {
-    //Auth.checkSignedIn(req);
-    return await context.prisma.user({ _id: args._id });
+  empresas: async (root, args, context) => {    
+    return await context.prisma.empresas();
   },
-  cuentas: (root, args, context) => {
-    const opArgs = {};
-    //Auth.checkSignedIn(req);
-    console.log(args.query);
-    if (args.query) {
-      opArgs.where = {
-        email: args.query
-      };
-      return context.prisma.cuentas(opArgs);
-    } else {
-      return context.prisma.cuentas();
-    }
+  categoria: async (root, args, context) => {
+    return await context.prisma.categoria(args);
   },
-  cuenta: async (root, args, context) => {
-    //Auth.checkSignedIn(req);
-    return await context.prisma.cuenta(args);
-  }
-  */
+  categorias: async (root, args, context) => {
+    return await context.prisma.categorias();
+  },
 };
 
 export { Query as default };
